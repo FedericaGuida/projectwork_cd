@@ -18,7 +18,7 @@ class AlbumController extends Controller
     {
         return $request->validate([
             'title' => 'required|string|min:3|max:255',
-            'singer_id' => 'required|exists:autori,id',
+            'singer_id' => 'required|exists:singers,id',
             'recordcompany_id' => 'required',
             'year' => 'required|integer|min:1900|max:' . date('Y'),
             'tracks' => 'required|string',
