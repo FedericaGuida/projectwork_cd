@@ -11,6 +11,7 @@
       <tr>
         <th scope="col">Titolo</th>
         <th scope="col">Cantante</th>
+        <th scope="col">Etichetta discografica</th>
         <th scope="col">Anno</th>
         <th scope="col">Operazioni</th>
       </tr>
@@ -20,13 +21,15 @@
       <tr>
         <th scope="row"> {{ $album->title }} </th>
         <td>{{ $album->singer->name }} </td>
+        <td>{{ $album->recordcompany->name }} </td>
         <td>{{ $album->year }}</td>
         <td>
-          <a href="{{ route('admin.albums.edit', $album->id) }} ">Modifica</a>
+            <a href="{{ route('admin.albums.edit', $album->id) }} ">Modifica</a>
+
           <form action="{{ route('admin.albums.destroy', $album->id)}}" method="post">
             @csrf
             @method('delete')
-            <input type="submit" value="Cancella" onclick="return confirm('Confermi?')">
+                       <input type="submit" value="Elimina" onclick="return confirm('Confermi?')">
           </form>
         </td>
       </tr>

@@ -51,16 +51,22 @@
         </div>
 
 
-        <div class="form-group">
-            <label for="category">Categorie</label><br>
+        <div class="mb-3">
+            <label for="category">Categorie:</label><br>
             @foreach($categories as $category)
                 <input type="checkbox" id="category_{{ $category->id }}" name="category[]" value="{{ $category->id }}" {{ $album->category->contains($category->id) ? 'checked' : '' }}>
                 <label for="category_{{ $category->id }}">{{ $category->name }}</label><br>
             @endforeach
         </div>
+
+
+
+
         <div class="mb-3">
-            <label for="tracks" class="form-label">Tracce</label>
-            <input type="text-area" class="form-control" id="tracks" name="tracks" value="{{ $album->tracks }}">
+            <label for="tracks" class="form-label">Tracce:</label><br>
+            <textarea rows="10" cols="30" name="tracks" id="tracks" required>
+            </textarea>
+
         </div>
         <button type="submit" class="btn btn-primary">Invia</button>
       </form>

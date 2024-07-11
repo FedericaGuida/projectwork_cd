@@ -12,11 +12,12 @@
             <h3>{{ $album->recordcompany->name }} </h3>
 
             <div class="col-lg-5">
-                    <div class="card-body">
-             Tracce: <br>
-             {{ $album->tracks }}
-        </div>
+                    <div class="card-body"> Tracce: <br>  {{ $album->tracks }}</div>
             </div>
+
+
+
+
         </div>
     </div>
 </div>

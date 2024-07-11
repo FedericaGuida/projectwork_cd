@@ -11,7 +11,16 @@ class Recordcompany extends Model
 
     protected $table = 'recordcompanies';
 
+    protected $fillable = [
+        'name',
+        'city',
+
+    ];
+
+    public $timestamp = false;
+
     public function albums(){
         return $this->hasMany(Album::class);
     }
+
 }

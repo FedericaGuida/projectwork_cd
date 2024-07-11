@@ -60,8 +60,10 @@
         </div>
 
         <div class="mb-3">
-            <label for="tracks" class="form-label">Tracce</label>
-            <input type="text-area" class="form-control" id="tracks" name="tracks" required>
+            <label for="tracks" class="form-label">Tracce</label><br>
+            <textarea rows="10" cols="30" name="tracks" id="tracks" required>
+            </textarea>
+
         </div>
 
         <button type="submit" class="btn btn-primary">Invia</button>

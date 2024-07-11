@@ -7,7 +7,7 @@
 <div class="container">
     {{-- @dd($albums) --}}
     {{-- @dd($singers) --}}
-    <h1>Questa è la pagina degli albums</h1>
+    <h1>Ecco una selezione di albums scelta per te! </h1>
     <div class="row g-2">
         @foreach($albums as $album)
         {{-- @dd($album) --}}
@@ -18,7 +18,7 @@
                   <h5 class="card-title"> {{$album->title}} </h5>
                   <h6 class="card-subtitle mb-2 text-body-secondary">Cantante: {{$album->singer->name}} </h6>
                   <h6 class="card-subtitle mb-2 text-body-secondary">Etichetta Discografica: {{$album->recordcompany->name}} </h6>
-                  <p class="card-text">Year: {{$album->year}}</p>
+                  <p class="card-text">Anno: {{$album->year}}</p>
                   @if($album->category->isNotEmpty())
                   <p class="card-text">Categorie:
                     @foreach($album->category as $categoria)

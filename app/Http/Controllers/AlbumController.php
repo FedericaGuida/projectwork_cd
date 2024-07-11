@@ -8,6 +8,7 @@ use App\Models\Singer;
 use App\Models\Recordcompany;
 use App\Models\Category;
 
+
 class AlbumController extends Controller
 {
     /**
@@ -27,6 +28,8 @@ class AlbumController extends Controller
             'category.*' => 'exists:categories,id',
         ]);
     }
+
+
 
     public function index()
     {
@@ -68,14 +71,17 @@ class AlbumController extends Controller
         $validatedData = $this->validateData($request);
 
         // Creazione di un nuovo album con i dati validati
+
         $album = new Album;
         $album->fill($validatedData);
 
         $album->save();
-        //aggiungiamo le categorie
 
         $album->category()->attach($request->category);
-        return redirect()->route('admin.albums.index');
+         return redirect()->route('admin.albums.index');
+
+
+
     }
 
     /**
@@ -87,7 +93,12 @@ class AlbumController extends Controller
         return view('albums.show', compact('album'));
     }
 
-    /**
+
+
+
+        /**
+
+
      * Show the form for editing the specified resource.
      */
     public function edit(string $id)
@@ -98,6 +109,10 @@ class AlbumController extends Controller
         $album = Album::find($id);
         return view('admin.albums.edit', compact('album', 'singers', 'recordcompanies', 'categories'));
     }
+
+
+
+
 
     /**
      * Update the specified resource in storage.

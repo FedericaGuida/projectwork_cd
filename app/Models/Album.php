@@ -25,6 +25,8 @@ class Album extends Model
         return $this->belongsTo(Singer::class);
     }
 
+
+
     public function recordcompany(){
         return $this->belongsTo(Recordcompany::class);
     }
@@ -32,6 +34,7 @@ class Album extends Model
     public function category() {
         return $this->belongsToMany(Category::class, 'album_category');
     }
+
 
 
 }
