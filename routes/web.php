@@ -33,3 +33,4 @@ Route::get('/admin/modifica-album/{album}', [AlbumController::class, 'edit'])->n
 Route::put('/admin/albums/{album}', [AlbumController::class, 'update'])->name('admin.albums.update');
 
 Route::delete('/admin/albums/{album}', [AlbumController::class, 'destroy'])->name('admin.albums.destroy');
+Route::post('/send-email', [EmailController::class, 'sendEmail'])->name('sendEmail');
